@@ -1,6 +1,10 @@
 # ✨ CleanFindBar
 Changes position and style of [Zen Browser](https://zen-browser.app/) Findbar
 
+<h2> Before </h2>
+<img width="1920" height="1056" alt="image" src="https://github.com/user-attachments/assets/e065fafa-4e45-4355-b1a7-d736e9031ca7" />
+
+<h2> After </h2>
 
 
 <h1> 📃 How to install </h1>
