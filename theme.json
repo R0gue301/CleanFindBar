@@ -1,0 +1,17 @@
+{
+    "id": "zzz",
+    "name": "CleanFindBar",
+    "description": "Changes position and style of Zen Browser Findbar",
+    "homepage": "https://github.com/R0gue301/CleanFindBar",
+    "style": "https://raw.githubusercontent.com/R0gue301/CleanFindBar/main/userChrome.css",
+    "readme": "https://raw.githubusercontent.com/R0gue301/CleanFindBar/main/README.md",
+    "author": "R0gue",
+    "version": "0.1",
+    "tags": [
+        "Zen Browser",
+        "Find bar",
+    ],
+    "createdAt": "2025-07-16",
+    "updatedAt": "2025-07-17",
+    "fork": ["zen"]
+}
