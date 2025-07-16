@@ -1,2 +1,2 @@
 # CleanFindBar
-Changes position and stybe of Zen's Findbar
+Changes position and style of Zen's Findbar
