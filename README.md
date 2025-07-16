@@ -21,4 +21,5 @@ __Manual installation__
 * Copy everything from there
 * Paste it in your ```userChrome.css```
   (to find it type ```about:support``` in search bar and locate ```Profile Folder```, then go to ```chrome``` folder and there will be the file you need or you can create it)
+* Save changes to your .css and relaunch Zen
 * Done!
