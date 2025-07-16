@@ -1,0 +1,232 @@
+/* -------------------------- FINDBAR -------------------------- */
+
+/* Center Findbar */
+findbar {
+	top: 15px !important;
+	bottom: auto !important;
+	left: 50% !important;
+	right: auto !important;
+	transform: translateX(-50%) translateY(0) !important;
+}
+
+.browserContainer {
+	overflow: clip;
+}
+
+/* Animations */
+@keyframes findbar-show-animation {
+	from {
+		opacity: 0;
+		transform: translateX(var(--better-findbar-transform-translateX)) translateY(var(--better-findbar-transform-translateY));
+	}
+	to {
+		opacity: 1;
+		transform: translateX(var(--better-findbar-transform-translateX)) translateY(0);
+	}
+}
+
+findbar {
+	display: flex !important;
+	align-items: center !important;
+	gap: 6px !important;
+
+	position: absolute !important;
+	top: var(--better-findbar-position-top);
+	bottom: var(--better-findbar-position-bottom);
+	left: var(--better-findbar-position-left);
+	right: var(--better-findbar-position-right);
+	transform: translateX(var(--better-findbar-transform-translateX)) translateY(0);
+	will-change: transform, opacity;
+
+	width: 90% !important;
+	max-width: 600px !important;
+	height: auto !important;
+	padding: 4px 8px !important;
+	margin: 0 !important;
+
+	border-radius: 10px !important;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6) !important;
+	background: light-dark(rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.4)) !important;
+	backdrop-filter: blur(24px) saturate(140%) !important;
+
+	transition: transform 0.35s ease !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	animation: findbar-show-animation 0.3s ease-out forwards !important;
+}
+
+findbar[hidden="true"] {
+	opacity: 0 !important;
+	transform: translateX(var(--better-findbar-transform-translateX)) translateY(var(--better-findbar-transform-translateY)) scale(0.95) !important;
+	pointer-events: none !important;
+	visibility: hidden !important;
+	transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s !important;
+}
+
+findbar .findbar-container {
+	flex-wrap: wrap;
+	overflow-x: auto !important;
+	height: auto !important;
+	row-gap: 8px;
+
+	& > :first-child {
+		width: 100% !important;
+		display: flex !important;
+		gap: 8px !important;
+		align-items: center !important;
+	}
+
+	& .findbar-textbox {
+		flex-grow: 1 !important;
+		min-width: 230px !important;
+		background: transparent !important;
+		color: inherit !important;
+		border: none !important;
+		outline: none !important;
+		font-size: 14px !important;
+		padding: 4px 10px !important;
+		box-shadow: none !important;
+		height: 40px !important;
+		line-height: 40px !important;
+	}
+}
+
+/* Positions */
+body:has(#theme-Better-Find-Bar[theme-better_find_bar-horizontal_position="left"]) {
+	--better-findbar-transform-translateX: 0%;
+	--better-findbar-position-left: 15px;
+	--better-findbar-position-right: auto;
+}
+
+body:has(#theme-Better-Find-Bar[theme-better_find_bar-horizontal_position="right"]) {
+	--better-findbar-transform-translateX: 0%;
+	--better-findbar-position-left: auto;
+	--better-findbar-position-right: 15px;
+}
+
+body:has(#theme-Better-Find-Bar[theme-better_find_bar-vertical_position="top"]) {
+	--better-findbar-transform-translateY: -150px;
+	--better-findbar-position-bottom: auto;
+	--better-findbar-position-top: 15px;
+}
+
+/* Blur */
+@media (-moz-bool-pref: "theme.better_find_bar.transparent_background") {
+	findbar,
+	findbar .findbar-textbox:not([status="notfound"]) {
+		backdrop-filter: blur(24px) saturate(140%) !important;
+		background: light-dark(rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.4)) !important;
+	}
+	findbar .findbar-textbox:not([status="notfound"]) {
+		background: light-dark(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2)) !important;
+	}
+}
+
+/* Buttons */
+findbar toolbarbutton {
+	background: light-dark(rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.15)) !important;
+	border-radius: 6px !important;
+	transition: background 0.2s ease, transform 0.1s ease-out !important;
+	padding: 0 !important;
+	font-size: 14px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+
+/* Arrows */
+.findbar-find-previous,
+.findbar-find-next {
+	height: 40px !important;
+	width: 36px !important;
+}
+
+/* Close button */
+.findbar-close {
+	width: 40px !important;
+	height: 40px !important;
+	font-size: 18px !important;
+}
+
+/* Hover */
+findbar toolbarbutton:hover {
+	background: light-dark(rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0.6)) !important;
+	transform: scale(1.05) !important;
+}
+
+findbar toolbarbutton:active {
+	transform: scale(0.92) !important;
+}
+
+.findbar-close {
+	margin-left: 0 !important;
+}
+
+/* Hide */
+body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_highlight="hide_immediately"]) .findbar-highlight,
+body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_match_case="hide_immediately"]) .findbar-case-sensitive,
+body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_match_diacritics="hide_immediately"]) .findbar-match-diacritics,
+body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words="hide_immediately"]) .findbar-entire-word {
+	display: none !important;
+}
+
+body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_highlight="hide_on_disable"]) checkbox.findbar-highlight:not([checked]),
+body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_match_case="hide_on_disable"]) checkbox.findbar-case-sensitive:not([checked]),
+body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_match_diacritics="hide_on_disable"]) checkbox.findbar-match-diacritics:not([checked]),
+body:has(#theme-Better-Find-Bar[theme-better_find_bar-hide_whole_words="hide_on_disable"]) .findbar-entire-word:not([checked]) {
+	display: none !important;
+}
+
+@media (-moz-bool-pref: "theme.better_find_bar.hide_find_status"]) {
+	findbar .findbar-find-status {
+		display: none !important;
+	}
+}
+
+@media (-moz-bool-pref: "theme.better_find_bar.hide_found_matches"]) {
+	findbar .findbar-label.found-matches {
+		display: none !important;
+	}
+}
+
+/* Smaller arrows container and center? */
+.findbar-find-previous,
+.findbar-find-next {
+	width: 32px !important;
+	height: 32px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+/* Close button same size as arrows (doesn't work for now) */
+.findbar-close {
+	width: 32px !important;
+	height: 32px !important;
+	font-size: 16px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.findbar-find-previous .toolbarbutton-icon,
+.findbar-find-next .toolbarbutton-icon {
+	width: 100% !important;
+	height: 100% !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	text-align: center !important;
+}
+
+findbar {
+	border-top: none !important;
+	box-shadow: none !important; /* removed top sahdow */
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6) !important; /* bottom shadow */
+}
