@@ -18,7 +18,7 @@ __Using [Sine](https://github.com/CosmoCreeper/Sine)__
 
 __Manual installation__ 
 
-* Download ```chrome.css``` file
+* Download ```userChrome.css``` file
 * Copy everything from there
 * Paste it in your ```userChrome.css```
   (to find it type ```about:support``` in search bar and locate ```Profile Folder```, then go to ```chrome``` folder and there will be the file you need or you can create it)
