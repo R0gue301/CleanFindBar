@@ -9,7 +9,7 @@ Changes position and style of [Zen Browser](https://zen-browser.app/) Findbar
 
 __Using [Sine](https://github.com/CosmoCreeper/Sine)__
 
-* Copy Username/Repo
+* Copy Username/Repo (or url of the repo)
 * Paste it here 
  <img width="866" height="759" alt="image" src="https://github.com/user-attachments/assets/f8268b71-92ed-4abc-a92c-f8ee255667e1" /> 
 
