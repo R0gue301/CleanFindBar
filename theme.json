@@ -8,12 +8,12 @@
 },
     "readme": "https://raw.githubusercontent.com/R0gue301/CleanFindBar/refs/heads/main/README.md",
     "author": "R0gue301",
-    "version": "0.1",
+    "version": "0.5",
     "tags": [
         "Zen Browser",
         "Find bar",
     ],
     "createdAt": "2025-07-16",
-    "updatedAt": "2025-07-17",
+    "updatedAt": "2025-07-18",
     "fork": ["zen"]
 }
