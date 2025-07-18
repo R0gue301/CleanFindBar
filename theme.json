@@ -5,13 +5,13 @@
     "homepage": "https://github.com/R0gue301/CleanFindBar",
     "style": {
         "chrome": "https://raw.githubusercontent.com/R0gue301/CleanFindBar/refs/heads/main/userChrome.css"
-},
+    },
     "readme": "https://raw.githubusercontent.com/R0gue301/CleanFindBar/refs/heads/main/README.md",
     "author": "R0gue301",
     "version": "0.5",
     "tags": [
         "Zen Browser",
-        "Find bar",
+        "Find bar"
     ],
     "createdAt": "2025-07-16",
     "updatedAt": "2025-07-18",
